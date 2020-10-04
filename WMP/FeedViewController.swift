@@ -12,18 +12,21 @@ class FeedViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .systemBackground
 		configureNavigationBar()
+	}
+	
+	fileprivate func didCustomizeViews() {
+		view.backgroundColor = .systemBackground
+		self.title = "Animais Perdidos"
 	}
 
 	func configureNavigationBar() {
-		self.title = "Animais Perdidos"
 		let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAdvertisementWasClicked))
 		navigationItem.setRightBarButton(addBarButton, animated: true)
 	}
 	
 	@objc func addAdvertisementWasClicked() {
-		print("cleitinho")
+		debugPrint("addAdvertisementWasClicked")
 	}
 }
 
